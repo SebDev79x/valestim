@@ -15,6 +15,12 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { GridComponent } from './material-tools/grid/grid.component';
 import { FlexLayoutModule } from '@angular/flex-layout';
+import { PageNotFoundComponent } from './skeletonApp/page-not-found/page-not-found.component';
+import { MoviesComponent } from './skeletonApp/movies/movies.component';
+import { HomeComponent } from './skeletonApp/home/home.component';
+import { RouterModule } from '@angular/router';
+import { MusicComponent } from './skeletonApp/music/music.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -23,7 +29,11 @@ import { FlexLayoutModule } from '@angular/flex-layout';
     MainComponent,
     SidenavComponent,
     ToolbarComponent,
-    GridComponent
+    GridComponent,
+    PageNotFoundComponent,
+    MoviesComponent,
+    HomeComponent,
+    MusicComponent
   ],
   imports: [
     BrowserModule,
@@ -34,7 +44,14 @@ import { FlexLayoutModule } from '@angular/flex-layout';
     MatToolbarModule,
     MatIconModule,
     MatGridListModule,
-    FlexLayoutModule
+    FlexLayoutModule,
+    RouterModule.forRoot([
+      { path: 'home', component: HomeComponent },
+      { path: 'movies', component: MoviesComponent },
+      { path: 'music', component:MusicComponent },
+      { path: '', redirectTo: 'home', pathMatch: 'full' },
+      { path: '**', redirectTo: 'home', pathMatch: 'full' }
+    ])
   ],
   providers: [],
   bootstrap: [AppComponent]

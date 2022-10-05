@@ -1,0 +1,11 @@
+1) changement couleur
+.ts
+déclaration const changeColor = (item: string) => {
+      item == "xs" ? this.bgcolor = "red" : this.bgcolor = "blue"
+      return this.bgcolor
+    }
+ajout dans fonction retournant this.deviceXs : changeColor(this.deviceXs)
+
+HTML : <div class="testDiv" [style.backgroundColor]="bgcolor">
+  youpi TEST
+  </div>

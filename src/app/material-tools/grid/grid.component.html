@@ -1,6 +1,6 @@
 <mat-grid-list cols="2" rowHeight="100px">
-  <mat-grid-tile class="tile1">Menu 1</mat-grid-tile>
-  <mat-grid-tile class="tile2">Menu 2</mat-grid-tile>
+  <mat-grid-tile class="tile1"><a [routerLink]="['/movies']" routerLinkActive="router-link-active" >Liste Films TMDB</a></mat-grid-tile>
+  <mat-grid-tile class="tile2"><a [routerLink]="['/music']" routerLinkActive="router-link-active" >Liste Albums</a></mat-grid-tile>
   <mat-grid-tile class="tile3">Menu 3</mat-grid-tile>
   <mat-grid-tile class="tile4">Menu 4</mat-grid-tile>
 </mat-grid-list>
