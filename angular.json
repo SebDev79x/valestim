@@ -107,5 +107,7 @@
       }
     }
   },
-  "defaultProject": "valestim-app"
+  "cli": {
+    "analytics": "2a44f7c9-7ea5-4592-b95f-0da7b39a580f"
+  }
 }
