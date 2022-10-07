@@ -1,0 +1,47 @@
+  <mat-card
+    *ngFor="let card of cards"
+  [style.background]="card.background"
+  [style.width]="card.width"
+  [style.height]="card.height"
+  [style.border]="card.border"
+  [style.borderRadius]="card.border_radius"
+>
+<mat-card-header *ngFor="let header of matCardHeader"
+[style.width]="header.width"
+  [style.height]="header.height"
+  [style.background]="header.background"
+  >
+  {{title}}
+</mat-card-header>
+<img mat-card-image src="{{blockUrl}}{{image}}" alt="Affiche de film">
+
+<mat-card-content>
+  <p>Description : {{description}}
+  </p>
+  <p *ngIf="dateExists()">Date :  {{date}}
+  </p>
+  <p>YOUPI c'est affiché</p>
+</mat-card-content>
+<mat-card-actions>
+  <button mat-button>LIKE</button>
+  <button mat-button>SHARE</button>
+</mat-card-actions>
+ <!--  <mat-card-header>
+    <div mat-card-avatar class="example-header-image"></div>
+    <mat-card-title>{{title}}</mat-card-title>
+    <mat-card-subtitle>SubTitle</mat-card-subtitle>
+  </mat-card-header>
+  <img mat-card-image src="{{blockUrl}}{{image}}" alt="Affiche de film {{title}}">
+  <mat-card-content>
+    <p>Description : {{description}}
+    </p>
+    <p *ngIf="dateExists()">Date :  {{date}}
+    </p>
+    <p>YOUPI c'est affiché</p>
+  </mat-card-content>
+  <mat-card-actions>
+    <button mat-button>LIKE</button>
+    <button mat-button>SHARE</button>
+  </mat-card-actions> -->
+</mat-card>
+

@@ -20,7 +20,9 @@ import { MoviesComponent } from './skeletonApp/movies/movies.component';
 import { HomeComponent } from './skeletonApp/home/home.component';
 import { RouterModule } from '@angular/router';
 import { MusicComponent } from './skeletonApp/music/music.component';
-
+import { HttpClientModule } from '@angular/common/http';
+import { CardComponent } from './material-tools/card/card.component';
+import {MatCardModule} from '@angular/material/card';
 @NgModule({
   declarations: [
     AppComponent,
@@ -33,7 +35,9 @@ import { MusicComponent } from './skeletonApp/music/music.component';
     PageNotFoundComponent,
     MoviesComponent,
     HomeComponent,
-    MusicComponent
+    MusicComponent,
+    CardComponent,
+
   ],
   imports: [
     BrowserModule,
@@ -45,10 +49,12 @@ import { MusicComponent } from './skeletonApp/music/music.component';
     MatIconModule,
     MatGridListModule,
     FlexLayoutModule,
+    HttpClientModule,
+    MatCardModule,
     RouterModule.forRoot([
       { path: 'home', component: HomeComponent },
       { path: 'movies', component: MoviesComponent },
-      { path: 'music', component:MusicComponent },
+      { path: 'music', component: MusicComponent },
       { path: '', redirectTo: 'home', pathMatch: 'full' },
       { path: '**', redirectTo: 'home', pathMatch: 'full' }
     ])

@@ -1,1 +1,12 @@
-<h1>SUPER COMPOSANT FILMS</h1>
+<h1>SUPER COMPOSANT FILMS (réutilisé)</h1>
+<div *ngFor="let data of horrorMoviesList">
+  <app-card
+  [title]="data?.original_title"
+  [description]="data?.overview"
+  [date]="data?.release_date"
+  [image]="data?.poster_path"
+  [blockUrl]="'https://image.tmdb.org/t/p/original/'"
+
+  >
+  </app-card>
+</div>

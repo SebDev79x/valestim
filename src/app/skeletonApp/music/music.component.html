@@ -1,1 +1,21 @@
-<p>music works!</p>
+<h1>SUPER COMPOSANT MUSIQUE réutilisé</h1>
+<div *ngFor="let size of (media$ | async) as sizes">
+  <p>{{size.mqAlias}} = {{size.mediaQuery}}</p>
+</div>
+<div class="wrapper-albums-list"
+fxLayout.xs="column"
+fxLayout.gt-xs="row"
+>
+  <div *ngFor="let album of albumsList"
+  fxLayoutAlign="space-around" >
+    <app-card
+    [title]="album?.title"
+    [description]="album?.id"
+    [date]=""
+    [blockUrl]="'../../../assets/'"
+    [image]="defaultImage"
+    >
+    </app-card>
+  </div>
+</div>
+
