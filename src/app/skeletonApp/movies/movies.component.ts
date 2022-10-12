@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { GetmoviesService } from './services-movies/getmovies.service';
+import { Subscription } from 'rxjs';
+import { GetMoviesService } from './services-movies/getmovies.service';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-movies',
@@ -8,24 +10,24 @@ import { GetmoviesService } from './services-movies/getmovies.service';
 })
 export class MoviesComponent implements OnInit {
   horrorMoviesList: any;
-  constructor(public getMovies: GetmoviesService) { }
+  sub: Subscription;
+  id: number;
+  constructor(public getMovies: GetMoviesService, private route: ActivatedRoute) {}
 
   /* LIFE CYCLES */
   ngOnInit(): void {
-    this.getAllMovies();
+    this.allHorrorMovies();
   }
   ngOnDestroy(): void {
-    this.getMovies.getHorrorMovies().unsubscribe()
+    this.sub.unsubscribe()
   }
 
   /* FUNCTIONS */
-  getAllMovies() {
-    return this.getMovies.getHorrorMovies().subscribe((data: any) => {
-      this.horrorMoviesList = data.results.map((element: any) => {
-        console.log("element", element)
+  allHorrorMovies() {
+    return this.sub = this.getMovies.getHorrorMovies().subscribe((data: any) => {
+      return this.horrorMoviesList = data.results.map((element: any) => {
         return element
       });
-      return this.horrorMoviesList
     })
   }
 }

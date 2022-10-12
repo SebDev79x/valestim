@@ -12,6 +12,7 @@ export class MusicComponent implements OnInit {
   defaultImage = 'oops.jpg'
   albumsList: any;
   media$:Observable<MediaChange[]>;
+  sub:Subscription
   deviceSize: string;
   bgcolor: string;
   constructor(public getAlbums: GetmusicService,public mediaOService: MediaObserverService,media:MediaObserver) {
@@ -24,13 +25,13 @@ export class MusicComponent implements OnInit {
     this.media$.subscribe((mq)=>console.log(mq))
   }
   ngOnDestroy(): void {
-    this.getAlbums.getMusicAlbums().unsubscribe()
+    this.sub.unsubscribe()
 
   }
 
   /* FUNCTIONS */
   getAllAlbums() {
-    return this.getAlbums.getMusicAlbums().subscribe((data: any) => {
+    return this.sub= this.getAlbums.getMusicAlbums().subscribe((data: any) => {
       return this.albumsList = data.map((element: any) => {
         return element
       });

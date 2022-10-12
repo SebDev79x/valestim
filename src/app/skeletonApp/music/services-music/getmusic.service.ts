@@ -7,10 +7,7 @@ import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 export class GetmusicService {
   API_URL = "https://jsonplaceholder.typicode.com/albums";
 
-  constructor(public http: HttpClient) {
-    console.log("SERVICE", this.getMusicAlbums());
-
-  }
+  constructor(public http: HttpClient) {}
 
   public getMusicAlbums(): any {
     return this.http.get(this.API_URL)

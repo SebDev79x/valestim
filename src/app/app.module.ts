@@ -20,9 +20,13 @@ import { MoviesComponent } from './skeletonApp/movies/movies.component';
 import { HomeComponent } from './skeletonApp/home/home.component';
 import { RouterModule } from '@angular/router';
 import { MusicComponent } from './skeletonApp/music/music.component';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { CardComponent } from './material-tools/card/card.component';
-import {MatCardModule} from '@angular/material/card';
+import { MatCardModule } from '@angular/material/card';
+import { MovieDetailsComponent } from './skeletonApp/movies/movie-details/movie-details.component';
+import { MatProgressBarModule } from '@angular/material/progress-bar';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+import { InterceptorService } from './global-services/loader/interceptor.service';
 @NgModule({
   declarations: [
     AppComponent,
@@ -37,6 +41,7 @@ import {MatCardModule} from '@angular/material/card';
     HomeComponent,
     MusicComponent,
     CardComponent,
+    MovieDetailsComponent,
 
   ],
   imports: [
@@ -51,15 +56,19 @@ import {MatCardModule} from '@angular/material/card';
     FlexLayoutModule,
     HttpClientModule,
     MatCardModule,
+    MatProgressBarModule,
+    MatProgressSpinnerModule,
     RouterModule.forRoot([
       { path: 'home', component: HomeComponent },
-      { path: 'movies', component: MoviesComponent },
-      { path: 'music', component: MusicComponent },
       { path: '', redirectTo: 'home', pathMatch: 'full' },
-      { path: '**', redirectTo: 'home', pathMatch: 'full' }
+      { path: 'movies', component: MoviesComponent },
+      { path: 'movie-details/:id', component: MovieDetailsComponent },
+      { path: 'music', component: MusicComponent },
+      { path: '**', component: PageNotFoundComponent,pathMatch: 'full' },
+
     ])
   ],
-  providers: [],
+  providers: [{ provide: HTTP_INTERCEPTORS, useClass: InterceptorService, multi: true }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

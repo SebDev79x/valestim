@@ -1,9 +1,34 @@
 .mat-card{
   color:white;
+  border:2px solid red;
+
 }
 .mat-card-header{
   color:#ffcce7;
   text-transform: capitalize;
   text-align: center;
   border:2px solid yellow;
+
+}
+.mat-card-content{
+  height:200px;
+
+}
+.poster_movie{
+  width:100%;
+  height:100%;
+position: absolute;
+top:0;
+right:0;
+transform: translate(-50% -50%);
+}
+.poster_movie_container{
+  border:2px solid red;
+  width:40%;
+position:relative;
+}
+.description_container{
+  border:2px solid violet;
+  width:60%;
+
 }

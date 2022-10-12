@@ -1,12 +1,20 @@
 <h1>SUPER COMPOSANT FILMS (réutilisé)</h1>
-<div *ngFor="let data of horrorMoviesList">
-  <app-card
-  [title]="data?.original_title"
-  [description]="data?.overview"
-  [date]="data?.release_date"
-  [image]="data?.poster_path"
-  [blockUrl]="'https://image.tmdb.org/t/p/original/'"
+<mat-grid-list cols="3" rowHeight="700px" gutterSize="10px">
 
-  >
-  </app-card>
-</div>
+  <mat-grid-tile *ngFor="let data of horrorMoviesList" >
+    <app-card
+    [original_title]="data?.original_title"
+    [title]="data?.title"
+    [date]="data?.release_date"
+    [image]="data?.poster_path"
+    [blockUrl]="'https://image.tmdb.org/t/p/original/'"
+    [id]="data?.id"
+    >
+  <!--   [image]="data?.poster_path"
+   -->  </app-card>
+
+
+  </mat-grid-tile>
+</mat-grid-list>
+
+

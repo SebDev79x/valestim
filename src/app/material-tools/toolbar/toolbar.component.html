@@ -15,16 +15,16 @@
 
   <mat-toolbar-row *ngIf="deviceXs !== 'xs'">
     <button mat-button>
-      <mat-icon>home</mat-icon>
+      <mat-icon><a [routerLink]="['/home']">home</a></mat-icon>
     </button>
     <button mat-button>
-      Films
+      <a [routerLink]="['/movies']" routerLinkActive="router-link-active" >Films</a>
     </button>
     <button mat-button>
-      Divers
+      <a [routerLink]="['/music']" routerLinkActive="router-link-active" >Musique</a>
     </button>
     <button mat-button>
-      Bonus
+      <a href="">Bonus</a>
     </button>
 
   </mat-toolbar-row>
