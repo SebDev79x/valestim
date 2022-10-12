@@ -1,0 +1,53 @@
+<main class="wrapper-main" [ngStyle]="{'flex-direction' : device == 'xs' || device == 'sm' ? 'column' : 'row'}">
+  <div class="main-container">
+    <div class="title-container">
+      <h1>La BIENVENUE sur ma superbe application ! :)</h1>
+    </div>
+    <mat-divider></mat-divider>
+    <div class="text-container">
+      <p class="text">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim recusandae
+        ad sunt quisquam quis? Vero reprehenderit quidem architecto suscipit ipsa iusto porro,
+        sequi unde debitis, repudiandae, nihil doloremque sint dolorum?
+        Lorem ipsum dolor sit amet consectetur adipisicing elit.
+        Enim recusandae ad sunt quisquam quis? Vero reprehenderit quidem architecto suscipit ipsa iusto porro,
+        sequi unde debitis, repudiandae, nihil doloremque sint dolorum?
+
+      </p>
+      <p class="text">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim recusandae
+        ad sunt quisquam quis? Vero reprehenderit quidem architecto suscipit ipsa iusto porro,
+        sequi unde debitis, repudiandae, nihil doloremque sint dolorum?
+        Lorem ipsum dolor sit amet consectetur adipisicing elit.
+        Enim recusandae ad sunt quisquam quis? Vero reprehenderit quidem architecto suscipit ipsa iusto porro,
+        sequi unde debitis, repudiandae, nihil doloremque sint dolorum?
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim recusandae
+        ad sunt quisquam quis? Vero reprehenderit quidem architecto suscipit ipsa iusto porro,
+        sequi unde debitis, repudiandae, nihil doloremque sint dolorum?
+        Lorem ipsum dolor sit amet consectetur adipisicing elit.
+        Enim recusandae ad sunt quisquam quis? Vero reprehenderit quidem architecto suscipit ipsa iusto porro,
+        sequi unde debitis, repudiandae, nihil doloremque sint dolorum?
+      </p>
+    </div>
+
+  </div>
+
+  <div class="img-container">
+    <img src="https://hips.hearstapps.com/hmg-prod/images/drive-in-theater-1592251388.jpg"
+      alt="Image fantaisiste drive-in cinema">
+  </div>
+</main>
+<!-- wrapper-main fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="50px"
+[ngStyle]="{'flex-direction' : (device == 'xs') ? 'column' : 'row','height' : (device == 'xs') ? '150px' : '100px'}">
+  <mat-grid-list
+
+  cols="2" rowHeight="400px">
+    <mat-grid-tile *ngFor="let tile of tiles"
+    [colspan]="tile.col"
+      [rowspan]="tile.row"
+      [style.background]="tile.color">
+      <p *ngIf="tile.text">{{tile.text}}</p>
+      <img *ngIf="tile.link" [src]="tile.link" alt="">
+    </mat-grid-tile>
+  </mat-grid-list>
+-->

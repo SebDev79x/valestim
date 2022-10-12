@@ -5,23 +5,25 @@
     </button>
     <span class="example-spacer"></span>
     <button mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
-      <mat-icon>favorite</mat-icon>
+      <mat-icon><a [routerLink]="['/movies']" routerLinkActive="router-link-active">movie</a></mat-icon>
     </button>
     <button mat-icon-button class="example-icon" aria-label="Example icon-button with share icon">
-      <mat-icon>share</mat-icon>
+      <mat-icon> <a [routerLink]="['/music']" routerLinkActive="router-link-active">library_music</a>
+      </mat-icon>
+      <mat-icon>settings</mat-icon>
     </button>
 
   </mat-toolbar-row>
 
   <mat-toolbar-row *ngIf="deviceXs !== 'xs'">
     <button mat-button>
-      <mat-icon><a [routerLink]="['/home']">home</a></mat-icon>
+      <a [routerLink]="['/home']">Accueil</a>
     </button>
     <button mat-button>
-      <a [routerLink]="['/movies']" routerLinkActive="router-link-active" >Films</a>
+      <a [routerLink]="['/movies']" routerLinkActive="router-link-active">Films</a>
     </button>
     <button mat-button>
-      <a [routerLink]="['/music']" routerLinkActive="router-link-active" >Musique</a>
+      <a [routerLink]="['/music']" routerLinkActive="router-link-active">Musique</a>
     </button>
     <button mat-button>
       <a href="">Bonus</a>

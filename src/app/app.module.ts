@@ -27,6 +27,8 @@ import { MovieDetailsComponent } from './skeletonApp/movies/movie-details/movie-
 import { MatProgressBarModule } from '@angular/material/progress-bar';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { InterceptorService } from './global-services/loader/interceptor.service';
+import { Main2Component } from './skeletonApp/main2/main2.component';
+import {MatDividerModule} from '@angular/material/divider';
 @NgModule({
   declarations: [
     AppComponent,
@@ -42,6 +44,7 @@ import { InterceptorService } from './global-services/loader/interceptor.service
     MusicComponent,
     CardComponent,
     MovieDetailsComponent,
+    Main2Component,
 
   ],
   imports: [
@@ -58,6 +61,7 @@ import { InterceptorService } from './global-services/loader/interceptor.service
     MatCardModule,
     MatProgressBarModule,
     MatProgressSpinnerModule,
+    MatDividerModule,
     RouterModule.forRoot([
       { path: 'home', component: HomeComponent },
       { path: '', redirectTo: 'home', pathMatch: 'full' },

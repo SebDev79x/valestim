@@ -1,2 +1,10 @@
-<h1>ERREUR 404</h1>
-<div [routerLink]="['/home']" routerLinkActive="router-link-active" >RETOUR</div>
+<div class="notfound-container">
+  <h1>ERREUR 404</h1>
+<p>Oups ! Il semble que cette page n'existe pas...</p>
+<div class="button-container">
+    <button type="button" mat-flat-button color="primary" [routerLink]="['/home']" routerLinkActive="router-link-active" >
+      Accueil
+    </button>
+</div>
+
+</div>

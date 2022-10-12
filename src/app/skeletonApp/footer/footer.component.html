@@ -1,6 +1,13 @@
-<footer>
-  <p>first column</p>
+<footer id="footer" [ngStyle]="{'flex-direction' : (device == 'xs') ? 'column' : 'row','height' : (device == 'xs') ? '150px' : '100px'}">
+  <div>
+    <span><mat-icon>settings</mat-icon></span>
+    <span><mat-icon>settings</mat-icon></span>
+    <span><mat-icon>settings</mat-icon></span>
+  </div>
   <p>© 2013 Sébastien Mazur.  All rights reserved.</p>
-  <p>second column</p>
-
+  <div>
+    <span><mat-icon>settings</mat-icon></span>
+    <span><mat-icon>settings</mat-icon></span>
+    <span><mat-icon>settings</mat-icon></span>
+  </div>
 </footer>

@@ -1,0 +1,20 @@
+.notfound-container{
+  position: absolute;
+  top:40%;
+  left:50%;
+  translate: -50% -50%;
+  margin:0;
+  padding: 0;
+  text-align: center;
+  display:flex;
+  flex-direction: column;
+  justify-content: space-around;
+  height:200px;
+}
+h1{
+  font-size: 40px;
+}
+p{
+  font-size: 30px;
+}
+

@@ -1,7 +1,7 @@
 export interface ITile {
-  text:string;
+  text?:string;
   col:number;
   row:number;
-  color:string;
-  link:string;
+  color?:string;
+  link?:string;
   }
